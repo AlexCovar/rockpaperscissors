@@ -7,17 +7,18 @@ let randomValue;
 let userChoice;
 let computerChoice;
 // GETTING THE VALUE
-userChoice = $("input").val();
-$("input").val(); 
+$("button").click(function(){
+    userChoice = $("input").val();
+});
 // PRINTING VALUE (USER CHOICE)
 $("button").click(function(){
-    $("#userChoice").text($("#input").val());
+    $("#userChoice").text(userChoice);
 });
 // SETTING UP ARRAY
  array = [
      "Rock",
      "Paper",
-     "Scisors"
+     "Scissors"
  ]
  // RANDOM VALUE FROM ARRAY / PRINTING VALUE (COMPUTER CHOICE)
  $("button").click(function(){
@@ -25,15 +26,42 @@ $("button").click(function(){
     $("#computerChoice").text(randomValue);
 });
 // IF ELSE STATEMENTS 
-let compare = function(choice1,choice2){
-if(choice1===choice2) {
-    alert("no one wins!");
-}else if(choice1 === "Rock" && choice2 === "Scissors") {
-    alert("You Win!");
-}else if(choice1 === "Paper" && choice2 === "Rock") {
+$("button").click(function(){
+//  ROCK
+    if(userChoice === "Rock" || userChoice === "rock") {
+        if(computerChoice === "Rock") {
+            $("#result").text("No One Wins!");
+        }else if(computerChoice === "Paper") {
+            $("#result").text("You Lose!");
+        }else if(computerChoice === "Scissors") {
+            $("#result").text("You Win");
+        }
+    }
+//  PAPER
+    if(userChoice === "Paper" || userChoice === "paper") {
+        if(computerChoice === "Paper") {
+            $("#result").text("No One Wins!");
+        }else if(computerChoice === "Scissors") {
+            $("#result").text("You Lose!");
+        }else if(computerChoice === "Rock") {
+            $("#result").text("You Win");
+        }
+    }   
+//  SCISSORS
+    if(userChoice === "Scissors" || userChoice === "scissors") {
+        if(computerChoice === "Scissors") {
+            $("#result").text("No One Wins!");
+        }else if(computerChoice === "Rock") {
+            $("#result").text("You Lose!");
+        }else if(computerChoice === "Paper") {
+            $("#result").text("You Win");
+        }
+    } 
+//  OTHER TEXT
+    if(userChoice !== "Scissors" || userChoice !== "scissors" || userChoice !== "Paper" || userChoice !== "paper" || userChoice !== "Rock" || userChoice !== "rock") {
+        alert("Please Enter: 'Rock', 'Paper', or 'Scissors'");
+    }
 
-}else {
-
-}
-};
-compare(userChoice,computerChoice);
+    $("#input").text(" ");
+    //document.getElementById('#input').value='';
+});    
