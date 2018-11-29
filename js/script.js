@@ -57,10 +57,6 @@ $("button").click(function(){
             $("#result").text("You Win");
         }
     } 
-//  OTHER TEXT
-    if(userChoice !== "Scissors" || userChoice !== "scissors" || userChoice !== "Paper" || userChoice !== "paper" || userChoice !== "Rock" || userChoice !== "rock") {
-        alert("Please Enter: 'Rock', 'Paper', or 'Scissors'");
-    }
 
     $("#input").text(" ");
     //document.getElementById('#input').value='';
