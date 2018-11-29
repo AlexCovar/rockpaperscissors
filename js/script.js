@@ -6,6 +6,10 @@ let array;
 let randomValue;
 let userChoice;
 let computerChoice;
+let win;
+let loss;
+win = 1;
+loss = 0;
 // GETTING THE VALUE
 $("button").click(function(){
     userChoice = $("input").val();
@@ -57,7 +61,15 @@ $("button").click(function(){
             $("#result").text("You Win");
         }
     } 
+//  CLEARING INPUT FIELD
+    $('input').val('');
+//  WIN LOSS COUNTER
 
-    $("#input").text(" ");
-    //document.getElementById('#input').value='';
+if($("#result").text( ) === "You Win") {
+    win+=1;
+    $(".winCount").text(win);
+}else if($("#result").text( ) === "You Lose!") {
+    loss+=1;
+    $(".lossCount").text(loss);
+}
 });    

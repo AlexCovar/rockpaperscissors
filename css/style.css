@@ -1,3 +1,6 @@
+body {
+  background-color:#D5FBF8;
+}
 .row{
   text-align:center;
 }
@@ -31,4 +34,14 @@ input {
   width:187px;
   height:24px;
   border-radius:7px;
+}
+.winLoss {
+  display:flex;
+  justify-content:center;
+}
+.win {
+  margin-right:10%;
+}
+.loss {
+  margin-left:10%;
 }
